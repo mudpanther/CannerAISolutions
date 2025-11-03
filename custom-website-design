@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Website Design & SEO Services | CannerAI Solutions</title>
+    <meta name="description" content="Professional website design and comprehensive SEO services. From technical optimization to content strategy, we build digital experiences that rank and convert.">
+    <link rel="canonical" href="https://canneraisolutions.com/custom-website-design">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_transparent.png">
+    <link rel="shortcut icon" type="image/png" href="logo_transparent.png">
+    <link rel="apple-touch-icon" href="logo_transparent.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(90deg, #00d9ff 1px, transparent 1px),
+                linear-gradient(180deg, #00d9ff 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: circuitMove 20s linear infinite;
+        }
+
+        @keyframes circuitMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            border-bottom: 2px solid #00d9ff;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.8));
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d9ff;
+        }
+
+        .back-button {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+        }
+
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.4rem;
+            color: #b0b0b0;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .intro {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: rgba(0, 217, 255, 0.05);
+            border-left: 4px solid #00d9ff;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin: 4rem 0 2rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.8rem;
+            color: #00d9ff;
+            margin: 3rem 0 1.5rem;
+        }
+
+        .content-block {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(0, 217, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .content-block h3 {
+            font-size: 1.6rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
+        }
+
+        .content-block h4 {
+            font-size: 1.3rem;
+            color: #8a2be2;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content-block p {
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .content-block ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .content-block li {
+            color: #b0b0b0;
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-block li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #00d9ff;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: #00d9ff;
+            margin-bottom: 1rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .process-card {
+            background: rgba(0, 217, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .process-card .number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .process-card h4 {
+            color: #00d9ff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+            margin-top: 4rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 50px rgba(138, 43, 226, 0.7);
+        }
+
+        footer {
+            background: #000000;
+            border-top: 2px solid #00d9ff;
+            padding: 2rem;
+            text-align: center;
+            color: #b0b0b0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+    
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="logo_transparent.png" alt="CannerAI Solutions">
+                </div>
+                <h1>CANNER AI SOLUTIONS</h1>
+            </a>
+            <a href="index.html#services" class="back-button">← Back to Services</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Custom Website Design & SEO</h2>
+            <p class="subtitle">Engineering digital experiences that rank, convert, and grow with your business</p>
+        </section>
+
+        <div class="content-section">
+            <div class="intro">
+                At Canner AI Solutions, we don't just build websites — we engineer digital experiences that reflect your brand's unique identity. Whether you want sleek minimalism, bold futuristic energy, or a fully interactive layout, our team brings any vision to life with precision and creativity. Every site we build is optimized from the ground up for SEO, speed, and conversion — ensuring your business stands out online and gets found by the right audience.
+            </div>
+
+            <h2 class="section-title">What Is SEO & Why It Matters</h2>
+            
+            <div class="content-block">
+                <p>Search Engine Optimization (SEO) is the practice of optimizing your website so it ranks higher in search engine results pages (SERPs) like Google, Bing, and others. When done correctly, SEO ensures that when potential customers search for services or products you offer, your website appears at the top of the results.</p>
+                
+                <p><strong>Why does this matter?</strong> Over 90% of online experiences begin with a search engine, and 75% of users never scroll past the first page of results. If your website isn't optimized, you're invisible to potential customers actively searching for what you offer.</p>
+            </div>
+
+            <h2 class="section-title">Our Comprehensive SEO Implementation</h2>
+
+            <h3 class="section-subtitle">1. Technical SEO Foundation</h3>
+            
+            <div class="content-block">
+                <h4>Site Architecture & Structure</h4>
+                <p>We build websites with clean, logical architecture that search engines can easily crawl and index. This includes:</p>
+                <ul>
+                    <li><strong>XML Sitemaps:</strong> Comprehensive sitemaps that tell search engines exactly which pages to index</li>
+                    <li><strong>Robots.txt Optimization:</strong> Proper directives to guide search engine crawlers</li>
+                    <li><strong>URL Structure:</strong> Clean, descriptive URLs that are both user-friendly and SEO-optimized</li>
+                    <li><strong>Internal Linking Strategy:</strong> Strategic internal links that distribute page authority and help users navigate</li>
+                    <li><strong>Breadcrumb Navigation:</strong> Clear hierarchical structure for both users and search engines</li>
+                </ul>
+
+                <h4>Page Speed Optimization</h4>
+                <p>Google uses page speed as a ranking factor. We optimize every element for lightning-fast load times:</p>
+                <ul>
+                    <li><strong>Image Optimization:</strong> Compressed images with modern formats (WebP, AVIF) and lazy loading</li>
+                    <li><strong>Code Minification:</strong> Minified CSS, JavaScript, and HTML to reduce file sizes</li>
+                    <li><strong>Browser Caching:</strong> Configured caching to reduce server requests</li>
+                    <li><strong>Content Delivery Network (CDN):</strong> Global content distribution for faster load times worldwide</li>
+                    <li><strong>Server Response Time:</strong> Optimized hosting and server configurations</li>
+                </ul>
+
+                <h4>Mobile-First Design</h4>
+                <p>With Google's mobile-first indexing, we ensure every site is fully responsive and mobile-optimized:</p>
+                <ul>
+                    <li>Responsive design that adapts seamlessly to all screen sizes</li>
+                    <li>Touch-friendly navigation and interactive elements</li>
+                    <li>Mobile page speed optimization</li>
+                    <li>Mobile-specific user experience enhancements</li>
+                </ul>
+
+                <h4>Core Web Vitals</h4>
+                <p>We optimize for Google's Core Web Vitals - the metrics Google uses to measure user experience:</p>
+                <ul>
+                    <li><strong>Largest Contentful Paint (LCP):</strong> Main content loads within 2.5 seconds</li>
+                    <li><strong>First Input Delay (FID):</strong> Pages respond to user interactions within 100ms</li>
+                    <li><strong>Cumulative Layout Shift (CLS):</strong> Visual stability with minimal layout shifts</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">2. On-Page SEO Excellence</h3>
+            
+            <div class="content-block">
+                <h4>Strategic Keyword Research</h4>
+                <p>Before writing a single line of code or content, we conduct comprehensive keyword research:</p>
+                <ul>
+                    <li>Identifying high-value keywords your target audience searches for</li>
+                    <li>Analyzing search volume, competition, and user intent</li>
+                    <li>Finding long-tail keyword opportunities with high conversion potential</li>
+                    <li>Competitive keyword gap analysis</li>
+                    <li>Local SEO keyword targeting (if applicable)</li>
+                </ul>
+
+                <h4>Content Optimization</h4>
+                <p>Every page is crafted with SEO best practices built in:</p>
+                <ul>
+                    <li><strong>Title Tags:</strong> Compelling, keyword-rich titles (50-60 characters) that drive clicks</li>
+                    <li><strong>Meta Descriptions:</strong> Persuasive descriptions (150-160 characters) that improve click-through rates</li>
+                    <li><strong>Header Tags (H1-H6):</strong> Properly structured content hierarchy with target keywords</li>
+                    <li><strong>Keyword Placement:</strong> Strategic keyword usage without over-optimization</li>
+                    <li><strong>Semantic SEO:</strong> Related terms and LSI keywords for topic depth</li>
+                    <li><strong>Content Length:</strong> Comprehensive content that thoroughly covers topics</li>
+                    <li><strong>Readability:</strong> Clear, engaging writing optimized for both users and search engines</li>
+                </ul>
+
+                <h4>Schema Markup Implementation</h4>
+                <p>We implement structured data (Schema.org markup) to help search engines understand your content:</p>
+                <ul>
+                    <li><strong>Organization Schema:</strong> Business information, contact details, social profiles</li>
+                    <li><strong>Local Business Schema:</strong> For local SEO with address, hours, reviews</li>
+                    <li><strong>Product Schema:</strong> Rich snippets for e-commerce with pricing, availability, reviews</li>
+                    <li><strong>Article/Blog Schema:</strong> Enhanced search results for content</li>
+                    <li><strong>FAQ Schema:</strong> Featured snippet opportunities</li>
+                    <li><strong>Breadcrumb Schema:</strong> Enhanced search result display</li>
+                </ul>
+
+                <h4>Image SEO</h4>
+                <p>Every image is optimized for search visibility:</p>
+                <ul>
+                    <li>Descriptive, keyword-rich file names</li>
+                    <li>Comprehensive alt text for accessibility and SEO</li>
+                    <li>Image compression for fast loading</li>
+                    <li>Responsive images with appropriate sizing</li>
+                    <li>Image sitemaps for better indexing</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">3. Content Strategy & Creation</h3>
+            
+            <div class="content-block">
+                <h4>SEO Content Planning</h4>
+                <p>We develop a comprehensive content strategy aligned with your business goals:</p>
+                <ul>
+                    <li>Content gap analysis to identify opportunities</li>
+                    <li>Editorial calendar for consistent content publishing</li>
+                    <li>Topic clusters and pillar page strategy</li>
+                    <li>User intent mapping for each content piece</li>
+                    <li>Conversion-focused content structure</li>
+                </ul>
+
+                <h4>High-Quality Content Creation</h4>
+                <ul>
+                    <li>Original, valuable content that serves user needs</li>
+                    <li>E-E-A-T optimization (Experience, Expertise, Authoritativeness, Trustworthiness)</li>
+                    <li>Comprehensive topic coverage that outperforms competitors</li>
+                    <li>Strategic internal linking within content</li>
+                    <li>Clear calls-to-action for conversion optimization</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">4. Off-Page SEO & Link Building</h3>
+            
+            <div class="content-block">
+                <h4>Authority Building</h4>
+                <p>While we focus on building great websites, we also advise on building domain authority:</p>
+                <ul>
+                    <li>Guidance on earning high-quality backlinks from authoritative sites</li>
+                    <li>Content strategies that naturally attract links</li>
+                    <li>Local citation building for local businesses</li>
+                    <li>Brand mention monitoring and management</li>
+                    <li>Social signals optimization</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">5. Local SEO (When Applicable)</h3>
+            
+            <div class="content-block">
+                <p>For businesses serving local markets, we implement comprehensive local SEO:</p>
+                <ul>
+                    <li><strong>Google Business Profile Optimization:</strong> Complete, optimized profile with all business details</li>
+                    <li><strong>Local Citations:</strong> Consistent NAP (Name, Address, Phone) across directories</li>
+                    <li><strong>Local Keywords:</strong> Geographic keyword targeting in content</li>
+                    <li><strong>Local Schema Markup:</strong> Structured data for local search</li>
+                    <li><strong>Review Management Strategy:</strong> Systems for generating and managing reviews</li>
+                    <li><strong>Local Link Building:</strong> Partnerships and citations from local organizations</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">6. Analytics & Continuous Optimization</h3>
+            
+            <div class="content-block">
+                <h4>Comprehensive Tracking Setup</h4>
+                <ul>
+                    <li><strong>Google Analytics 4:</strong> Advanced event tracking and conversion monitoring</li>
+                    <li><strong>Google Search Console:</strong> Search performance monitoring and issue identification</li>
+                    <li><strong>Heat Mapping:</strong> User behavior analysis for optimization opportunities</li>
+                    <li><strong>Conversion Tracking:</strong> Goal setup and ROI measurement</li>
+                </ul>
+
+                <h4>Ongoing Optimization</h4>
+                <p>SEO is not a one-time effort. We provide:</p>
+                <ul>
+                    <li>Monthly performance reports with key metrics</li>
+                    <li>Keyword ranking monitoring</li>
+                    <li>Competitor analysis and strategy adjustments</li>
+                    <li>Content performance analysis and optimization</li>
+                    <li>Technical SEO audits and fixes</li>
+                    <li>Algorithm update monitoring and adaptation</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔍 The Bottom Line: Results That Matter</h3>
+                <p>Our SEO implementation isn't about vanity metrics — it's about driving real business results. We focus on:</p>
+                <ul>
+                    <li><strong>Increased Organic Traffic:</strong> More qualified visitors from search engines</li>
+                    <li><strong>Higher Rankings:</strong> Top positions for your target keywords</li>
+                    <li><strong>Better User Experience:</strong> Fast, intuitive websites that convert</li>
+                    <li><strong>Measurable ROI:</strong> Clear tracking of how SEO impacts your bottom line</li>
+                    <li><strong>Long-Term Growth:</strong> Sustainable strategies that compound over time</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Our Website Design & SEO Process</h2>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="number">01</div>
+                    <h4>Discovery & Strategy</h4>
+                    <p>We dive deep into your business, goals, target audience, and competitive landscape. We conduct comprehensive keyword research and develop a custom SEO strategy.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="number">02</div>
+                    <h4>Design & Architecture</h4>
+                    <p>Our designers create stunning visuals that reflect your brand while our developers build a technically sound foundation optimized for SEO from the ground up.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="number">03</div>
+                    <h4>Content Creation</h4>
+                    <p>We craft compelling, SEO-optimized content that serves your users' needs while targeting high-value keywords and search intent.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="number">04</div>
+                    <h4>Technical Implementation</h4>
+                    <p>We implement all technical SEO elements: schema markup, site speed optimization, mobile responsiveness, Core Web Vitals, and more.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="number">05</div>
+                    <h4>Testing & Launch</h4>
+                    <p>Rigorous testing across devices and browsers ensures everything works perfectly before launch. We also set up analytics and tracking.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="number">06</div>
+                    <h4>Monitor & Optimize</h4>
+                    <p>Post-launch, we monitor performance, track rankings, analyze user behavior, and continuously optimize to improve results.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💡 Why Choose Canner AI Solutions for Web Design & SEO?</h3>
+                <ul>
+                    <li><strong>Technical Expertise:</strong> Deep understanding of both design and technical SEO</li>
+                    <li><strong>AI-Powered Optimization:</strong> We leverage AI tools for data analysis and optimization</li>
+                    <li><strong>Custom Solutions:</strong> No templates — every site is built from scratch for your unique needs</li>
+                    <li><strong>Conversion Focus:</strong> Beautiful design that actually drives business results</li>
+                    <li><strong>Transparent Reporting:</strong> Clear metrics showing exactly how your investment performs</li>
+                    <li><strong>Future-Proof:</strong> Built with scalability and long-term growth in mind</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Dominate Search Results?</h2>
+            <p style="font-size: 1.2rem; color: #b0b0b0; margin-bottom: 2rem;">Let's build a website that doesn't just look great — it drives real business growth.</p>
+            <a href="index.html#contact" class="cta-button">Get Your Free Consultation</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Canner AI Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
