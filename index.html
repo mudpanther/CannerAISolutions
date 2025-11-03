@@ -674,6 +674,156 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
+        /* ===== CUSTOM CURSOR ===== */
+        body {
+            cursor: none !important;
+        }
+
+        * {
+            cursor: none !important;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #00d9ff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+            background: rgba(0, 217, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .custom-cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #00d9ff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10001;
+            box-shadow: 0 0 10px #00d9ff;
+        }
+
+        .custom-cursor.cursor-hover {
+            width: 60px;
+            height: 60px;
+            background: rgba(138, 43, 226, 0.2);
+            border-color: #8a2be2;
+        }
+
+        /* ===== 3D ROTATING LOGO ===== */
+        .hero-logo {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .hero-logo img {
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        /* ===== ENHANCED MICRO-INTERACTIONS ===== */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .service-card {
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 217, 255, 0.4);
+        }
+
+        .contact-item {
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .header-email:hover,
+        .header-phone:hover {
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-2px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Enhanced glow on buttons */
+        .cta-button:hover {
+            animation: buttonGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 217, 255, 0.5),
+                            0 0 40px rgba(138, 43, 226, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 217, 255, 0.8),
+                            0 0 80px rgba(138, 43, 226, 0.6);
+            }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== INTERACTIVE PARTICLES ===== */
+        .particle {
+            transition: all 0.3s ease-out;
+        }
+
+        /* ===== SCROLL PROGRESS BAR ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #00d9ff 0%, #8a2be2 100%);
+            z-index: 9999;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+            transition: width 0.1s ease;
+        }
     </style>
     
     <!-- SEO: Structured Data - Organization Schema -->
@@ -789,6 +939,13 @@
     </script>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="cursorDot"></div>
+
     <!-- SEO: Decorative background element with aria-hidden -->
     <div class="circuit-bg" aria-hidden="true"></div>
     <div class="particles" id="particles" aria-hidden="true"></div>
@@ -968,9 +1125,105 @@
         </nav>
     </footer>
 
+
     <script>
-        // Create floating particles
+        // ===== CUSTOM CURSOR =====
+        const cursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('cursorDot');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let dotX = 0, dotY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Smooth following effect
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            dotX += (mouseX - dotX) * 0.15;
+            dotY += (mouseY - dotY) * 0.15;
+
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top = dotY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Add hover effect to cursor
+        const hoverElements = document.querySelectorAll('a, button, .service-card, .contact-item');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+            });
+        });
+
+        // ===== 3D ROTATING LOGO WITH MOUSE TRACKING =====
+        const heroLogo = document.querySelector('.hero-logo img');
+        const heroSection = document.querySelector('.hero');
+
+        if (heroLogo && heroSection) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                heroLogo.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                heroLogo.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        }
+
+        // ===== SCROLL PROGRESS BAR =====
+        const scrollProgress = document.getElementById('scrollProgress');
+        
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Apply fade-in to service cards and sections
+        document.querySelectorAll('.service-card, .contact-item, .about-content, .founders').forEach(el => {
+            el.classList.add('fade-in-section');
+            fadeInObserver.observe(el);
+        });
+
+        // ===== INTERACTIVE PARTICLES =====
         const particlesContainer = document.getElementById('particles');
+        const particleArray = [];
+
+        // Create particles with mouse interaction
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
@@ -978,9 +1231,39 @@
             particle.style.animationDelay = Math.random() * 10 + 's';
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particlesContainer.appendChild(particle);
+            
+            particleArray.push({
+                element: particle,
+                x: parseFloat(particle.style.left),
+                baseY: Math.random() * 100
+            });
         }
 
-        // Smooth scrolling for navigation links
+        // Make particles react to mouse
+        document.addEventListener('mousemove', (e) => {
+            const mouseXPercent = (e.clientX / window.innerWidth) * 100;
+            const mouseYPercent = (e.clientY / window.innerHeight) * 100;
+
+            particleArray.forEach(p => {
+                const distX = p.x - mouseXPercent;
+                const distY = p.baseY - mouseYPercent;
+                const distance = Math.sqrt(distX * distX + distY * distY);
+
+                if (distance < 15) {
+                    const angle = Math.atan2(distY, distX);
+                    const force = (15 - distance) / 15;
+                    const moveX = Math.cos(angle) * force * 3;
+                    const moveY = Math.sin(angle) * force * 3;
+                    
+                    p.element.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + force * 0.5})`;
+                    p.element.style.opacity = 0.8 + force * 0.2;
+                } else {
+                    p.element.style.transform = 'translate(0, 0) scale(1)';
+                }
+            });
+        });
+
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -994,28 +1277,35 @@
             });
         });
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // ===== RIPPLE EFFECT ON BUTTONS =====
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
         });
-    </script>
+
+        console.log('🚀 All interactive features loaded!');
+        console.log('✨ Custom cursor active');
+        console.log('🎮 3D logo tracking enabled');
+        console.log('📊 Scroll progress tracking');
+        console.log('🎬 Scroll animations ready');
+        console.log('⚡ Interactive particles active');
+    </script></script>
 
     <!-- SEO: Third-party chatbot loaded asynchronously with defer -->
     <script async defer type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
