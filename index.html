@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- SEO: Character encoding must be declared first -->
+    <meta charset="UTF-8">
+    
+    <!-- SEO: Viewport meta tag for mobile-first indexing -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Optimized title tag with primary keyword + brand (58 chars) -->
+    <title>AI Automation for Small Business | CannerAI Solutions</title>
+    
+    <!-- SEO: Compelling meta description targeting primary keywords (155 chars) -->
+    <meta name="description" content="Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions. Free consultation.">
+    
+    <!-- SEO: Canonical URL prevents duplicate content issues -->
+    <link rel="canonical" href="https://canneraisolutions.com/">
+    
+    <!-- SEO: Robots directives for indexing control -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- SEO: Open Graph tags for social media sharing optimization -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Automation for Small Business | CannerAI Solutions">
+    <meta property="og:description" content="Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.">
+    <meta property="og:url" content="https://canneraisolutions.com/">
+    <meta property="og:site_name" content="CannerAI Solutions">
+    <meta property="og:image" content="https://canneraisolutions.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- SEO: Twitter Card markup for Twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Automation for Small Business | CannerAI Solutions">
+    <meta name="twitter:description" content="Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.">
+    <meta name="twitter:image" content="https://canneraisolutions.com/assets/twitter-image.jpg">
+    
+    <!-- SEO: Performance - DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://interfaces.zapier.com">
+    <link rel="preconnect" href="https://interfaces.zapier.com" crossorigin>
+    
+    <!-- SEO: Theme color for mobile browsers -->
+    <meta name="theme-color" content="#00d9ff">
+    
+    <!-- Favicon - Embedded as base64 with transparent background -->
+    <link rel="icon" type="image/png" href="logo_transparent.png">
+    <link rel="shortcut icon" type="image/png" href="logo_transparent.png">
+    <link rel="apple-touch-icon" href="logo_transparent.png">
+    
+    <!-- SEO: All CSS inline for performance AND visual beauty -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Circuit Board Background Animation */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(90deg, #00d9ff 1px, transparent 1px),
+                linear-gradient(180deg, #00d9ff 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: circuitMove 20s linear infinite;
+        }
+
+        @keyframes circuitMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* Glowing particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00d9ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00d9ff;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            border-bottom: 2px solid #00d9ff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem 0.5rem 2rem;
+        }
+
+        .nav-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem 1rem 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-email,
+        .header-phone {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-email:hover,
+        .header-phone:hover {
+            color: #8a2be2;
+            transform: translateY(-2px);
+        }
+
+        .header-email span,
+        .header-phone span {
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brain-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+
+        .brain-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.8));
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+            }
+            50% { 
+                transform: scale(1.05);
+            }
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00d9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #8a2be2;
+            text-shadow: 0 0 10px #8a2be2;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d9ff, #8a2be2);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        /* Hero Logo Display */
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            animation: heroLogoFloat 3s ease-in-out infinite;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.6)) drop-shadow(0 0 30px rgba(138, 43, 226, 0.4));
+        }
+
+        @keyframes heroLogoFloat {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.05);
+            }
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .tagline {
+            font-size: 2rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .motto {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px #00d9ff;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 50px rgba(138, 43, 226, 0.7);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            cursor: pointer;
+            background: rgba(0, 217, 255, 0.05);
+            border: 2px solid #00d9ff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 217, 255, 0.3);
+            border-color: #8a2be2;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #00d9ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        /* About Section Logo Watermark */
+        .about-logo-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .about-logo-watermark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+        }
+
+        .founders {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 217, 255, 0.05);
+            border: 2px solid #00d9ff;
+            border-radius: 20px;
+        }
+
+        .founders h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00d9ff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(0, 217, 255, 0.05);
+            border: 2px solid #00d9ff;
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+            border-color: #8a2be2;
+        }
+
+        .contact-item h3 {
+            font-size: 1.5rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #8a2be2;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            border-top: 2px solid #00d9ff;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #b0b0b0;
+            position: relative;
+        }
+
+        /* Footer Logo */
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #00d9ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #8a2be2;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .motto {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem;
+            }
+
+            .header-contact {
+                font-size: 0.85rem;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .brain-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-logo-watermark {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        /* Circuit decorations */
+        .circuit-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #00d9ff;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .circuit-decoration-1 {
+            top: 10%;
+            left: 5%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .circuit-decoration-2 {
+            bottom: 10%;
+            right: 5%;
+            animation: rotate 15s linear infinite reverse;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <!-- SEO: Structured Data - Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CannerAI Solutions",
+      "alternateName": "Canner AI Solutions",
+      "url": "https://canneraisolutions.com",
+      "logo": "https://canneraisolutions.com/assets/logo.png",
+      "description": "AI automation and strategy consulting company helping small and medium businesses implement AI-driven automation, workflow optimization, and intelligent business processes.",
+      "foundingDate": "2024",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Maximilian Canner"
+        },
+        {
+          "@type": "Person",
+          "name": "Joshua Canner"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-845-300-6352",
+        "contactType": "Customer Service",
+        "email": "Info@canneraisolutions.com",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/canneraisolutions"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": [
+        "AI Automation Consulting",
+        "Process Optimization",
+        "Intelligent Automation",
+        "AI Strategy Consulting",
+        "Business Analysis",
+        "Custom AI Solutions",
+        "ROI Enhancement"
+      ]
+    }
+    </script>
+    
+    <!-- SEO: Structured Data - WebPage Schema for homepage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://canneraisolutions.com/#webpage",
+      "url": "https://canneraisolutions.com/",
+      "name": "AI Automation for Small Business | CannerAI Solutions",
+      "description": "Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.",
+      "isPartOf": {
+        "@id": "https://canneraisolutions.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://canneraisolutions.com/assets/hero-image.jpg"
+      },
+      "datePublished": "2024-01-01T00:00:00+00:00",
+      "dateModified": "2025-10-29T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "https://canneraisolutions.com/#breadcrumb"
+      }
+    }
+    </script>
+    
+    <!-- SEO: Structured Data - Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://canneraisolutions.com/#website",
+      "url": "https://canneraisolutions.com/",
+      "name": "CannerAI Solutions",
+      "description": "AI Automation & Strategy Consulting for Small to Medium Businesses",
+      "publisher": {
+        "@id": "https://canneraisolutions.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://canneraisolutions.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- SEO: Structured Data - BreadcrumbList (homepage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://canneraisolutions.com/#breadcrumb",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://canneraisolutions.com/"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <!-- SEO: Decorative background element with aria-hidden -->
+    <div class="circuit-bg" aria-hidden="true"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+    
+    <!-- SEO: Semantic header with navigation landmark -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="header-contact">
+                <!-- SEO: Email link with semantic markup -->
+                <a href="mailto:Info@canneraisolutions.com" class="header-email" aria-label="Email CannerAI Solutions">
+                    <span aria-hidden="true">📧</span> Info@canneraisolutions.com
+                </a>                    
+                    
+                    
+            </div>
+            <div class="logo">
+                <!-- Logo in header with clean transparent background -->
+                <div class="brain-icon" aria-hidden="true">
+                    <img src="logo_transparent.png" alt="CannerAI Solutions Brain Circuit Logo">
+                </div>
+                <!-- SEO: Brand name as H1 since it's the homepage -->
+                <h1>CANNER AI SOLUTIONS</h1>
+            </div>
+            <div class="header-contact">
+                <!-- SEO: Phone link with proper tel: protocol -->
+                <a href="tel:+18453006352" class="header-phone" aria-label="Call CannerAI Solutions">
+                    <span aria-hidden="true">📱</span> 845-300-6352
+                </a>
+            </div>
+        </nav>
+        <div class="nav-links-container">
+            <!-- SEO: Unordered list for navigation links -->
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- SEO: Main content landmark -->
+    <main role="main" id="main-content">
+        <!-- SEO: Hero section with primary heading and CTA -->
+        <section class="hero" id="home" aria-labelledby="hero-heading">
+            <!-- SEO: Decorative elements with aria-hidden -->
+            <div class="circuit-decoration circuit-decoration-1" aria-hidden="true"></div>
+            <div class="circuit-decoration circuit-decoration-2" aria-hidden="true"></div>
+            <div class="hero-content">
+                <!-- Large Hero Logo with clean transparent background -->
+                <div class="hero-logo">
+                    <img src="logo_transparent.png" alt="CannerAI Solutions - AI Brain Circuit">
+                </div>
+                <!-- SEO: Primary H2 (H1 used in logo for homepage) with primary keyword -->
+                <h2 id="hero-heading">CANNER AI SOLUTIONS</h2>
+                <!-- SEO: Descriptive subheading with secondary keywords -->
+                <p class="tagline">AI Consulting | Automation & Strategy</p>
+                <p class="subtitle">Strategic AI Implementation to Transform Your Business</p>
+                <!-- SEO: Branded motto -->
+                <p class="motto">WORK SMARTER,<br>NOT HARDER.</p>
+                <!-- SEO: Primary CTA with descriptive anchor text -->
+                <a href="#contact" class="cta-button" aria-label="Schedule a free AI consultation">Get Started Today</a>
+            </div>
+        </section>
+
+        <!-- SEO: Services section with semantic article elements -->
+        <section class="services" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <!-- SEO: H2 heading for content hierarchy -->
+                <h2 id="services-heading" class="section-title">Our Services</h2>
+                <p class="section-subtitle">Cutting-edge AI solutions tailored to your business needs</p>
+                <div class="services-grid">
+                    <a href="custom-website-design" class="service-card" aria-labelledby="service-website">
+                        <div class="service-icon" aria-hidden="true">🌐</div>
+                        <h3 id="service-website">Custom Website Design & SEO</h3>
+                        <p>At Canner AI Solutions, we don't just build websites — we engineer digital experiences that reflect your brand's unique identity. Whether you want sleek minimalism, bold futuristic energy, or a fully interactive layout, our team brings any vision to life with precision and creativity. Every site we build is optimized from the ground up for SEO, speed, and conversion — ensuring your business stands out online and gets found by the right audience. From custom design elements to strategic automation integrations, we tailor every detail to your goals, giving your business a powerful digital foundation built to grow.</p>
+                    </a>
+                    
+                    <!-- SEO: Each service as clickable card with proper structure -->
+                    <a href="process-optimization" class="service-card" aria-labelledby="service-optimization">
+                        <div class="service-icon" aria-hidden="true">⚡</div>
+                        <h3 id="service-optimization">Process Optimization</h3>
+                        <p>Identify and eliminate inefficiencies in your workflow using advanced AI analysis. We streamline operations to save time and resources while maximizing productivity.</p>
+                    </a>
+                    
+                    <a href="intelligent-automation" class="service-card" aria-labelledby="service-automation">
+                        <div class="service-icon" aria-hidden="true">🤖</div>
+                        <h3 id="service-automation">Intelligent Automation</h3>
+                        <p>Automate repetitive tasks and free your team to focus on high-value work. Our AI-powered automation solutions integrate seamlessly with your existing systems.</p>
+                    </a>
+                    
+                    <a href="roi-enhancement" class="service-card" aria-labelledby="service-roi">
+                        <div class="service-icon" aria-hidden="true">📈</div>
+                        <h3 id="service-roi">ROI Enhancement</h3>
+                        <p>Implement data-driven AI strategies that directly impact your bottom line. We focus on measurable results and continuous improvement to maximize your return on investment.</p>
+                    </a>
+                    
+                    <a href="ai-strategy-consulting" class="service-card" aria-labelledby="service-strategy">
+                        <div class="service-icon" aria-hidden="true">🎯</div>
+                        <h3 id="service-strategy">AI Strategy Consulting</h3>
+                        <p>Develop a comprehensive AI roadmap aligned with your business goals. We provide expert guidance on AI adoption, implementation, and scaling.</p>
+                    </a>
+                    
+                    <a href="business-analysis" class="service-card" aria-labelledby="service-analysis">
+                        <div class="service-icon" aria-hidden="true">🔍</div>
+                        <h3 id="service-analysis">Business Analysis</h3>
+                        <p>Deep-dive analysis of your operations to uncover hidden opportunities. We leverage AI to provide insights that drive strategic decision-making.</p>
+                    </a>
+                    
+                    <a href="custom-ai-solutions" class="service-card" aria-labelledby="service-custom">
+                        <div class="service-icon" aria-hidden="true">🛠️</div>
+                        <h3 id="service-custom">Custom AI Solutions</h3>
+                        <p>Bespoke AI tools and systems designed specifically for your unique challenges. From concept to deployment, we build solutions that fit your needs perfectly.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO: About section with company information -->
+        <section class="about" id="about" aria-labelledby="about-heading">
+            <!-- Large watermark logo in background with clean transparent background -->
+            <div class="about-logo-watermark" aria-hidden="true">
+                <img src="logo_transparent.png" alt="">
+            </div>
+            <div class="container">
+                <h2 id="about-heading" class="section-title">About Us</h2>
+                <div class="about-content">
+                    <p>Canner AI Solutions is a cutting-edge consultancy dedicated to helping businesses harness the transformative power of artificial intelligence. We specialize in identifying inefficiencies, implementing intelligent automation, and developing strategic AI solutions that drive measurable results.</p>
+                    
+                    <p>Our approach is hands-on and results-oriented. We don't just provide recommendations—we work alongside you to implement solutions that make a real difference. Whether you're just beginning your AI journey or looking to optimize existing systems, we bring the expertise and innovation to help you succeed.</p>
+                    
+                    <aside class="founders">
+                        <h3>Founded by Brothers with a Vision</h3>
+                        <p>Canner AI Solutions was founded by Maximilian Canner and his Brother Joshua Canner, combining deep technical expertise with a passion for helping businesses thrive. Our mission is simple: leverage AI strategically to help companies work smarter, not harder.</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO: Contact section with contact information -->
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p class="section-subtitle">Ready to transform your business with AI? Let's talk.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📧 Email</h3>
+                            <a href="mailto:Info@canneraisolutions.com" aria-label="Email CannerAI Solutions">Info@canneraisolutions.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📱 Phone</h3>
+                            <a href="tel:+18453006352" aria-label="Call CannerAI Solutions">845-300-6352</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>💼 Schedule a Consultation</h3>
+                            <p style="color: #b0b0b0; margin-top: 1rem;">Contact us today to discuss how AI can revolutionize your business operations and boost your ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEO: Footer with supplementary information -->
+    <footer role="contentinfo">
+        <!-- Logo in footer with clean transparent background -->
+        <div class="footer-logo">
+            <img src="logo_transparent.png" alt="CannerAI Solutions">
+        </div>
+        <p>&copy; 2025 Canner AI Solutions. All rights reserved.</p>
+        <p>AI Consulting | Automation & Strategy</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- SEO: Third-party chatbot loaded asynchronously with defer -->
+    <script async defer type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+    <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmh3k0zzz000ej873h0myu4mq'></zapier-interfaces-chatbot-embed>
+</body>
+</html>
