@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <!-- SEO: Character encoding must be declared first -->
     <meta charset="UTF-8">
-    
-    <!-- SEO: Viewport meta tag for mobile-first indexing -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO: Optimized title tag with primary keyword + brand (58 chars) -->
     <title>AI Automation for Small Business | CannerAI Solutions</title>
-    
-    <!-- SEO: Compelling meta description targeting primary keywords (155 chars) -->
     <meta name="description" content="Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions. Free consultation.">
-    
-    <!-- SEO: Canonical URL prevents duplicate content issues -->
     <link rel="canonical" href="https://canneraisolutions.com/">
-    
-    <!-- SEO: Robots directives for indexing control -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- SEO: Open Graph tags for social media sharing optimization -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="AI Automation for Small Business | CannerAI Solutions">
@@ -29,26 +16,17 @@
     <meta property="og:image" content="https://canneraisolutions.com/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
-    <!-- SEO: Twitter Card markup for Twitter sharing -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Automation for Small Business | CannerAI Solutions">
     <meta name="twitter:description" content="Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.">
     <meta name="twitter:image" content="https://canneraisolutions.com/assets/twitter-image.jpg">
-    
-    <!-- SEO: Performance - DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="https://interfaces.zapier.com">
     <link rel="preconnect" href="https://interfaces.zapier.com" crossorigin>
-    
-    <!-- SEO: Theme color for mobile browsers -->
     <meta name="theme-color" content="#00d9ff">
-    
-    <!-- Favicon - Embedded as base64 with transparent background -->
     <link rel="icon" type="image/png" href="logo_transparent.png">
     <link rel="shortcut icon" type="image/png" href="logo_transparent.png">
     <link rel="apple-touch-icon" href="logo_transparent.png">
     
-    <!-- SEO: All CSS inline for performance AND visual beauty -->
     <style>
         * {
             margin: 0;
@@ -63,7 +41,6 @@
             overflow-x: hidden;
         }
 
-        /* Circuit Board Background Animation */
         .circuit-bg {
             position: fixed;
             top: 0;
@@ -84,7 +61,6 @@
             100% { background-position: 50px 50px; }
         }
 
-        /* Glowing particles */
         .particles {
             position: fixed;
             top: 0;
@@ -111,15 +87,16 @@
             100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
         }
 
-        /* Header Styles */
+        /* ===== HEADER - FIXED MOBILE ===== */
         header {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
-            border-bottom: 2px solid #00d9ff;
-            padding: 1rem 0;
+            background: rgba(10, 10, 10, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -128,15 +105,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem 0.5rem 2rem;
-        }
-
-        .nav-links-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem 1rem 2rem;
-            display: flex;
-            justify-content: center;
+            padding: 0.75rem 2rem;
         }
 
         .header-contact {
@@ -162,11 +131,6 @@
             transform: translateY(-2px);
         }
 
-        .header-email span,
-        .header-phone span {
-            font-size: 1.2rem;
-        }
-
         .logo {
             display: flex;
             align-items: center;
@@ -174,12 +138,13 @@
         }
 
         .brain-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             animation: pulse 2s infinite;
+            flex-shrink: 0;
         }
 
         .brain-icon img {
@@ -190,19 +155,25 @@
         }
 
         @keyframes pulse {
-            0%, 100% { 
-                transform: scale(1);
-            }
-            50% { 
-                transform: scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 10px #00d9ff;
+            white-space: nowrap;
+        }
+
+        /* Nav links row */
+        .nav-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 0.6rem 2rem;
+            display: flex;
+            justify-content: center;
         }
 
         .nav-links {
@@ -217,6 +188,7 @@
             font-weight: 500;
             transition: all 0.3s;
             position: relative;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -239,6 +211,47 @@
             width: 100%;
         }
 
+        /* ===== MOBILE HEADER FIX ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.6rem 1rem;
+                gap: 0;
+            }
+
+            /* Hide contact links on mobile to save space */
+            .header-contact {
+                display: none;
+            }
+
+            .logo {
+                gap: 0.6rem;
+                margin: 0 auto; /* center logo when contacts hidden */
+            }
+
+            .brain-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo h1 {
+                font-size: 1.1rem;
+            }
+
+            .nav-links-container {
+                padding: 0 1rem 0.5rem 1rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+        }
+
         /* Hero Section */
         .hero {
             min-height: 90vh;
@@ -253,14 +266,16 @@
         .hero-content {
             max-width: 900px;
             z-index: 1;
+            position: relative;
         }
 
-        /* Hero Logo Display */
         .hero-logo {
             width: 200px;
             height: 200px;
             margin: 0 auto 2rem;
             animation: heroLogoFloat 3s ease-in-out infinite;
+            perspective: 1000px;
+            transform-style: preserve-3d;
         }
 
         .hero-logo img {
@@ -268,15 +283,13 @@
             height: 100%;
             object-fit: contain;
             filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.6)) drop-shadow(0 0 30px rgba(138, 43, 226, 0.4));
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
         }
 
         @keyframes heroLogoFloat {
-            0%, 100% { 
-                transform: translateY(0) scale(1);
-            }
-            50% { 
-                transform: translateY(-20px) scale(1.05);
-            }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
         }
 
         .hero h2 {
@@ -317,39 +330,260 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, #00d9ff 0%, #8a2be2 100%);
+            background: rgba(0, 217, 255, 0.2) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
             color: #ffffff;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 700;
             border-radius: 50px;
             transition: all 0.3s;
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
             animation: fadeInUp 1s ease-out 0.8s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.4) 0%, rgba(138, 43, 226, 0.4) 100%);
+            z-index: -1;
         }
 
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 50px rgba(138, 43, 226, 0.7);
+            animation: buttonGlow 1.5s ease-in-out infinite;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 217, 255, 0.5), 0 0 40px rgba(138, 43, 226, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 217, 255, 0.8), 0 0 80px rgba(138, 43, 226, 0.6); }
+        }
+
+        /* ===== FEATURED PRODUCT BANNER ===== */
+        .featured-product {
+            padding: 0 2rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-product-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(0, 217, 255, 0.06) 50%, rgba(138, 43, 226, 0.08) 100%);
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            border-radius: 20px;
+            padding: 3rem 3.5rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .featured-product-inner::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 280px; height: 280px;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .featured-product-inner::after {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 160px; height: 160px;
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .fp-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #c9a84c, #e8c97a);
+            color: #0d1f35;
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+
+        .fp-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fp-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .fp-content h3 span {
+            background: linear-gradient(135deg, #c9a84c, #e8c97a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fp-content p {
+            color: #b0b0b0;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 1.5rem;
+        }
+
+        .fp-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .fp-stat-val {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #c9a84c;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .fp-stat-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .fp-cta {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(135deg, #c9a84c, #e8c97a);
+            color: #0d1f35;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .fp-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        .fp-visual {
+            flex-shrink: 0;
+            width: 220px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fp-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fp-step {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fp-step-num {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: rgba(201, 168, 76, 0.4);
+            font-variant-numeric: tabular-nums;
+            min-width: 24px;
+        }
+
+        .fp-step-text {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.3;
+        }
+
+        @media (max-width: 900px) {
+            .featured-product-inner {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+            }
+            .fp-visual { width: 100%; }
+            .fp-steps { flex-direction: row; flex-wrap: wrap; }
+            .fp-step { flex: 1; min-width: 140px; }
+            .fp-stats { gap: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .fp-stats { flex-wrap: wrap; gap: 1rem; }
+            .fp-step { min-width: 100%; }
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+            padding: 5rem 2rem 6rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(138, 43, 226, 0.03) 100%) !important;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+            backdrop-filter: blur(100px);
+            -webkit-backdrop-filter: blur(100px);
+            pointer-events: none;
         }
 
         .container {
@@ -382,38 +616,84 @@
 
         .service-card {
             cursor: pointer;
-            background: rgba(0, 217, 255, 0.05);
-            border: 2px solid #00d9ff;
+            background: rgba(0, 217, 255, 0.03) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 217, 255, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 2.5rem;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
             display: block;
+            transform-style: preserve-3d;
         }
 
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
             opacity: 0;
             transition: opacity 0.3s;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 217, 255, 0.3);
-            border-color: #8a2be2;
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
         }
 
-        .service-card:hover::before {
-            opacity: 1;
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(0, 217, 255, 0.08) !important;
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
+            border: 1px solid rgba(0, 217, 255, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 217, 255, 0.25), 0 0 40px rgba(138, 43, 226, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card:hover::before { opacity: 1; }
+        .service-card:hover::after { left: 100%; }
+
+        /* ===== NEW PRODUCT CARD - SPECIAL STYLING ===== */
+        .service-card.featured-card {
+            border: 1px solid rgba(201, 168, 76, 0.35) !important;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, rgba(0, 217, 255, 0.03) 100%) !important;
+            box-shadow: 0 8px 32px rgba(201, 168, 76, 0.12), inset 0 1px 0 0 rgba(255,255,255,0.08) !important;
+        }
+
+        .service-card.featured-card:hover {
+            border: 1px solid rgba(201, 168, 76, 0.6) !important;
+            box-shadow: 0 25px 60px rgba(201, 168, 76, 0.2), 0 0 40px rgba(201, 168, 76, 0.15) !important;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%) !important;
+        }
+
+        .service-card.featured-card .service-icon {
+            color: #c9a84c;
+        }
+
+        .new-badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #c9a84c, #e8c97a);
+            color: #0d1f35;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+            vertical-align: middle;
         }
 
         .service-icon {
@@ -446,22 +726,18 @@
             position: relative;
         }
 
-        /* About Section Logo Watermark */
         .about-logo-watermark {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
+            width: 400px; height: 400px;
             opacity: 0.08;
             z-index: 0;
             pointer-events: none;
         }
 
         .about-logo-watermark img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: contain;
         }
 
@@ -483,8 +759,11 @@
         .founders {
             margin-top: 3rem;
             padding: 2rem;
-            background: rgba(0, 217, 255, 0.05);
-            border: 2px solid #00d9ff;
+            background: rgba(0, 217, 255, 0.08) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 217, 255, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
             border-radius: 20px;
         }
 
@@ -497,7 +776,20 @@
         /* Contact Section */
         .contact {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(138, 43, 226, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(138, 43, 226, 0.03) 100%) !important;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+            backdrop-filter: blur(100px);
+            -webkit-backdrop-filter: blur(100px);
+            pointer-events: none;
         }
 
         .contact-content {
@@ -514,17 +806,23 @@
         }
 
         .contact-item {
-            background: rgba(0, 217, 255, 0.05);
-            border: 2px solid #00d9ff;
+            background: rgba(0, 217, 255, 0.05) !important;
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 217, 255, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 2rem;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-            border-color: #8a2be2;
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(0, 217, 255, 0.1) !important;
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2), 0 0 30px rgba(138, 43, 226, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
         }
 
         .contact-item h3 {
@@ -540,9 +838,7 @@
             transition: color 0.3s;
         }
 
-        .contact-item a:hover {
-            color: #8a2be2;
-        }
+        .contact-item a:hover { color: #8a2be2; }
 
         /* Footer */
         footer {
@@ -554,27 +850,20 @@
             position: relative;
         }
 
-        /* Footer Logo */
         .footer-logo {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             margin: 0 auto 1.5rem;
         }
 
         .footer-logo img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: contain;
             filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
-        }
+        footer p { margin-bottom: 0.5rem; }
 
-        .footer-links {
-            margin-top: 1rem;
-        }
+        .footer-links { margin-top: 1rem; }
 
         .footer-links a {
             color: #00d9ff;
@@ -583,90 +872,36 @@
             transition: color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: #8a2be2;
-        }
+        .footer-links a:hover { color: #8a2be2; }
 
-        /* Mobile Responsiveness */
+        /* Mobile hero */
         @media (max-width: 768px) {
-            .hero-logo {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .motto {
-                font-size: 1.8rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 1rem;
-            }
-
-            .header-contact {
-                font-size: 0.85rem;
-            }
-
-            .logo h1 {
-                font-size: 1.4rem;
-            }
-
-            .brain-icon {
-                width: 45px;
-                height: 45px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-logo-watermark {
-                width: 250px;
-                height: 250px;
-            }
+            .hero-logo { width: 150px; height: 150px; }
+            .hero h2 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.5rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .motto { font-size: 1.8rem; }
+            .section-title { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .about-logo-watermark { width: 250px; height: 250px; }
         }
 
         /* Circuit decorations */
         .circuit-decoration {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 200px; height: 200px;
             border: 2px solid #00d9ff;
             border-radius: 50%;
             opacity: 0.2;
         }
 
         .circuit-decoration-1 {
-            top: 10%;
-            left: 5%;
+            top: 10%; left: 5%;
             animation: rotate 20s linear infinite;
         }
 
         .circuit-decoration-2 {
-            bottom: 10%;
-            right: 5%;
+            bottom: 10%; right: 5%;
             animation: rotate 15s linear infinite reverse;
         }
 
@@ -675,19 +910,13 @@
             to { transform: rotate(360deg); }
         }
 
-        /* ===== CUSTOM CURSOR ===== */
-        body {
-            cursor: none !important;
-        }
-
-        * {
-            cursor: none !important;
-        }
+        /* Custom Cursor */
+        body { cursor: none !important; }
+        * { cursor: none !important; }
 
         .custom-cursor {
             position: fixed;
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border: 2px solid #00d9ff;
             border-radius: 50%;
             pointer-events: none;
@@ -700,8 +929,7 @@
 
         .custom-cursor-dot {
             position: fixed;
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: #00d9ff;
             border-radius: 50%;
             pointer-events: none;
@@ -710,92 +938,25 @@
         }
 
         .custom-cursor.cursor-hover {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: rgba(138, 43, 226, 0.2);
             border-color: #8a2be2;
         }
 
-        /* ===== 3D ROTATING LOGO ===== */
-        .hero-logo {
-            perspective: 1000px;
-            transform-style: preserve-3d;
+        /* Scroll progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #00d9ff 0%, #8a2be2 100%);
+            z-index: 9999;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+            transition: width 0.1s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .hero-logo img {
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
-        }
-
-        /* ===== ENHANCED MICRO-INTERACTIONS ===== */
-        .cta-button {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:active::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .service-card {
-            transform-style: preserve-3d;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 217, 255, 0.4);
-        }
-
-        .contact-item {
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-8px) scale(1.02);
-        }
-
-        .header-email:hover,
-        .header-phone:hover {
-            animation: bounce 0.5s ease;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-2px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* Enhanced glow on buttons */
-        .cta-button:hover {
-            animation: buttonGlow 1.5s ease-in-out infinite;
-        }
-
-        @keyframes buttonGlow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 217, 255, 0.5),
-                            0 0 40px rgba(138, 43, 226, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(0, 217, 255, 0.8),
-                            0 0 80px rgba(138, 43, 226, 0.6);
-            }
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
+        /* Scroll animations */
         .fade-in-section {
             opacity: 0;
             transform: translateY(50px);
@@ -807,114 +968,18 @@
             transform: translateY(0);
         }
 
-        /* ===== INTERACTIVE PARTICLES ===== */
-        .particle {
-            transition: all 0.3s ease-out;
-        }
-
-        /* ===== SCROLL PROGRESS BAR ===== */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #00d9ff 0%, #8a2be2 100%);
-            z-index: 9999;
-            box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
-            transition: width 0.1s ease;
-        }
-
-        /* ===== GLASSMORPHISM EFFECTS ===== */
-        
-        /* Enhanced Service Cards with Frosted Glass */
-        .service-card {
-            background: rgba(0, 217, 255, 0.03) !important;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 8px 32px 0 rgba(0, 217, 255, 0.15),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card:hover {
-            background: rgba(0, 217, 255, 0.08) !important;
-            backdrop-filter: blur(30px) saturate(200%);
-            -webkit-backdrop-filter: blur(30px) saturate(200%);
-            border: 1px solid rgba(0, 217, 255, 0.4);
-            box-shadow: 
-                0 25px 60px rgba(0, 217, 255, 0.25),
-                0 0 40px rgba(138, 43, 226, 0.3),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-        }
-
-        /* Glassmorphism Header */
-        header {
-            background: rgba(10, 10, 10, 0.7) !important;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        /* Glassmorphism Contact Items */
-        .contact-item {
-            background: rgba(0, 217, 255, 0.05) !important;
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 8px 32px 0 rgba(0, 217, 255, 0.1),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
-        }
-
-        .contact-item:hover {
-            background: rgba(0, 217, 255, 0.1) !important;
-            backdrop-filter: blur(25px) saturate(200%);
-            -webkit-backdrop-filter: blur(25px) saturate(200%);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            box-shadow: 
-                0 15px 40px rgba(0, 217, 255, 0.2),
-                0 0 30px rgba(138, 43, 226, 0.2),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
-        }
-
-        /* Glassmorphism Founders Section */
-        .founders {
-            background: rgba(0, 217, 255, 0.08) !important;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            box-shadow: 
-                0 8px 32px 0 rgba(0, 217, 255, 0.2),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-        }
-
-        /* Glassmorphism Intro Box */
-        .intro {
-            background: rgba(0, 217, 255, 0.05) !important;
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border: 1px solid rgba(0, 217, 255, 0.15) !important;
-            border-left: 3px solid #00d9ff !important;
-            box-shadow: 
-                0 8px 32px 0 rgba(0, 217, 255, 0.15),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
-        }
-
-        /* Floating Glass Panels */
-        .hero-content {
-            position: relative;
+        /* Body glow */
+        body {
+            background: 
+                radial-gradient(ellipse at top, rgba(0, 217, 255, 0.15), transparent),
+                radial-gradient(ellipse at bottom, rgba(138, 43, 226, 0.15), transparent),
+                #0a0a0a;
         }
 
         .hero-content::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
             background: rgba(0, 217, 255, 0.02);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -925,118 +990,9 @@
             animation: fadeIn 1s ease-out 0.5s forwards;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Enhanced Sections Background */
-        .services {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(138, 43, 226, 0.03) 100%) !important;
-            position: relative;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
-            backdrop-filter: blur(100px);
-            -webkit-backdrop-filter: blur(100px);
-            pointer-events: none;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(138, 43, 226, 0.03) 100%) !important;
-            position: relative;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
-            backdrop-filter: blur(100px);
-            -webkit-backdrop-filter: blur(100px);
-            pointer-events: none;
-        }
-
-        /* Glassmorphism on CTA Button */
-        .cta-button {
-            background: rgba(0, 217, 255, 0.2) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 
-                0 8px 32px rgba(0, 217, 255, 0.3),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.4) 0%, rgba(138, 43, 226, 0.4) 100%);
-            z-index: -1;
-        }
-
-        .cta-button:hover {
-            background: rgba(0, 217, 255, 0.3) !important;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Frosted Glass Loading Bar */
-        .scroll-progress {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        /* Enhance background for better glass effect visibility */
-        body {
-            background: 
-                radial-gradient(ellipse at top, rgba(0, 217, 255, 0.15), transparent),
-                radial-gradient(ellipse at bottom, rgba(138, 43, 226, 0.15), transparent),
-                #0a0a0a;
-        }
-
-        /* Glass reflection effect on hover */
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.1),
-                transparent
-            );
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::after {
-            left: 100%;
-        }
+        @keyframes fadeIn { to { opacity: 1; } }
     </style>
-    
+
     <!-- SEO: Structured Data - Organization Schema -->
     <script type="application/ld+json">
     {
@@ -1049,14 +1005,8 @@
       "description": "AI automation and strategy consulting company helping small and medium businesses implement AI-driven automation, workflow optimization, and intelligent business processes.",
       "foundingDate": "2024",
       "founders": [
-        {
-          "@type": "Person",
-          "name": "Maximilian Canner"
-        },
-        {
-          "@type": "Person",
-          "name": "Joshua Canner"
-        }
+        { "@type": "Person", "name": "Maximilian Canner" },
+        { "@type": "Person", "name": "Joshua Canner" }
       ],
       "address": {
         "@type": "PostalAddress",
@@ -1071,15 +1021,11 @@
         "email": "Info@canneraisolutions.com",
         "availableLanguage": ["English"]
       },
-      "sameAs": [
-        "https://www.linkedin.com/company/canneraisolutions"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
-      },
+      "sameAs": ["https://www.linkedin.com/company/canneraisolutions"],
+      "areaServed": { "@type": "Country", "name": "United States" },
       "serviceType": [
         "AI Automation Consulting",
+        "AI Avatar Video Production",
         "Process Optimization",
         "Intelligent Automation",
         "AI Strategy Consulting",
@@ -1089,8 +1035,7 @@
       ]
     }
     </script>
-    
-    <!-- SEO: Structured Data - WebPage Schema for homepage -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1099,22 +1044,12 @@
       "url": "https://canneraisolutions.com/",
       "name": "AI Automation for Small Business | CannerAI Solutions",
       "description": "Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.",
-      "isPartOf": {
-        "@id": "https://canneraisolutions.com/#website"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://canneraisolutions.com/assets/hero-image.jpg"
-      },
+      "isPartOf": { "@id": "https://canneraisolutions.com/#website" },
       "datePublished": "2024-01-01T00:00:00+00:00",
-      "dateModified": "2025-10-29T00:00:00+00:00",
-      "breadcrumb": {
-        "@id": "https://canneraisolutions.com/#breadcrumb"
-      }
+      "dateModified": "2025-05-07T00:00:00+00:00"
     }
     </script>
-    
-    <!-- SEO: Structured Data - Website Schema -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1122,150 +1057,155 @@
       "@id": "https://canneraisolutions.com/#website",
       "url": "https://canneraisolutions.com/",
       "name": "CannerAI Solutions",
-      "description": "AI Automation & Strategy Consulting for Small to Medium Businesses",
-      "publisher": {
-        "@id": "https://canneraisolutions.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://canneraisolutions.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <!-- SEO: Structured Data - BreadcrumbList (homepage) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "@id": "https://canneraisolutions.com/#breadcrumb",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://canneraisolutions.com/"
-      }]
+      "description": "AI Automation & Strategy Consulting for Small to Medium Businesses"
     }
     </script>
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
-    
-    <!-- Custom Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
     <div class="custom-cursor-dot" id="cursorDot"></div>
-
-    <!-- SEO: Decorative background element with aria-hidden -->
     <div class="circuit-bg" aria-hidden="true"></div>
     <div class="particles" id="particles" aria-hidden="true"></div>
-    
-    <!-- SEO: Semantic header with navigation landmark -->
+
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
             <div class="header-contact">
-                <!-- SEO: Email link with semantic markup -->
                 <a href="mailto:Info@canneraisolutions.com" class="header-email" aria-label="Email CannerAI Solutions">
                     <span aria-hidden="true">📧</span> Info@canneraisolutions.com
-                </a>                    
-                    
-                    
+                </a>
             </div>
             <div class="logo">
-                <!-- Logo in header with clean transparent background -->
                 <div class="brain-icon" aria-hidden="true">
                     <img src="logo_transparent.png" alt="CannerAI Solutions Brain Circuit Logo">
                 </div>
-                <!-- SEO: Brand name as H1 since it's the homepage -->
                 <h1>CANNER AI SOLUTIONS</h1>
             </div>
             <div class="header-contact">
-                <!-- SEO: Phone link with proper tel: protocol -->
                 <a href="tel:+18453006352" class="header-phone" aria-label="Call CannerAI Solutions">
                     <span aria-hidden="true">📱</span> 845-300-6352
                 </a>
             </div>
         </nav>
         <div class="nav-links-container">
-            <!-- SEO: Unordered list for navigation links -->
             <ul class="nav-links" role="menubar">
                 <li role="none"><a href="#home" role="menuitem">Home</a></li>
                 <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="ai-avatar-video.html" role="menuitem">AI Avatar Video</a></li>
                 <li role="none"><a href="#about" role="menuitem">About</a></li>
                 <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- SEO: Main content landmark -->
     <main role="main" id="main-content">
-        <!-- SEO: Hero section with primary heading and CTA -->
         <section class="hero" id="home" aria-labelledby="hero-heading">
-            <!-- SEO: Decorative elements with aria-hidden -->
             <div class="circuit-decoration circuit-decoration-1" aria-hidden="true"></div>
             <div class="circuit-decoration circuit-decoration-2" aria-hidden="true"></div>
             <div class="hero-content">
-                <!-- Large Hero Logo with clean transparent background -->
                 <div class="hero-logo">
                     <img src="logo_transparent.png" alt="CannerAI Solutions - AI Brain Circuit">
                 </div>
-                <!-- SEO: Primary H2 (H1 used in logo for homepage) with primary keyword -->
                 <h2 id="hero-heading">CANNER AI SOLUTIONS</h2>
-                <!-- SEO: Descriptive subheading with secondary keywords -->
                 <p class="tagline">AI Consulting | Automation & Strategy</p>
                 <p class="subtitle">Strategic AI Implementation to Transform Your Business</p>
-                <!-- SEO: Branded motto -->
                 <p class="motto">WORK SMARTER,<br>NOT HARDER.</p>
-                <!-- SEO: Primary CTA with descriptive anchor text -->
                 <a href="#contact" class="cta-button" aria-label="Schedule a free AI consultation">Get Started Today</a>
             </div>
         </section>
 
-        <!-- SEO: Services section with semantic article elements -->
+        <!-- ===== FEATURED PRODUCT BANNER ===== -->
+        <section class="featured-product" aria-label="Featured product">
+            <div class="featured-product-inner fade-in-section">
+                <div class="fp-content">
+                    <div class="fp-badge">⭐ New Product</div>
+                    <h3>AI Avatar Video Production<br><span>for Real Estate Professionals</span></h3>
+                    <p>Your voice. Your face. Ready to post. We clone your voice and appearance to produce professional talking-head videos from a script and deliver polished full HD files directly to you — on a recurring production schedule.</p>
+                    <div class="fp-stats">
+                        <div>
+                            <div class="fp-stat-val">8–12</div>
+                            <div class="fp-stat-label">Videos / month</div>
+                        </div>
+                        <div>
+                            <div class="fp-stat-val">~0 hrs</div>
+                            <div class="fp-stat-label">Required from you</div>
+                        </div>
+                        <div>
+                            <div class="fp-stat-val">$299/mo</div>
+                            <div class="fp-stat-label">Starting at</div>
+                        </div>
+                    </div>
+                    <a href="ai-avatar-video.html" class="fp-cta">Learn More →</a>
+                </div>
+                <div class="fp-visual">
+                    <div class="fp-steps">
+                        <div class="fp-step">
+                            <div class="fp-step-num">01</div>
+                            <div class="fp-step-text">We clone your voice &amp; avatar</div>
+                        </div>
+                        <div class="fp-step">
+                            <div class="fp-step-num">02</div>
+                            <div class="fp-step-text">We write scripts &amp; produce videos</div>
+                        </div>
+                        <div class="fp-step">
+                            <div class="fp-step-num">03</div>
+                            <div class="fp-step-text">You receive polished MP4 files, ready to post</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="services" id="services" aria-labelledby="services-heading">
             <div class="container">
-                <!-- SEO: H2 heading for content hierarchy -->
                 <h2 id="services-heading" class="section-title">Our Services</h2>
                 <p class="section-subtitle">Cutting-edge AI solutions tailored to your business needs</p>
                 <div class="services-grid">
+
+                    <!-- NEW: AI Avatar Video card - featured styling -->
+                    <a href="ai-avatar-video.html" class="service-card featured-card" aria-labelledby="service-avatar">
+                        <div class="new-badge">New</div>
+                        <div class="service-icon" aria-hidden="true">🎬</div>
+                        <h3 id="service-avatar">AI Avatar Video Production</h3>
+                        <p>Professional AI-generated videos of you — your cloned voice, your likeness — produced from a script and delivered as polished full HD files. One setup session, then recurring production on your schedule.</p>
+                    </a>
+
                     <a href="custom-website-design.html" class="service-card" aria-labelledby="service-website">
                         <div class="service-icon" aria-hidden="true">🌐</div>
                         <h3 id="service-website">Custom Website Design & SEO</h3>
-                        <p>At Canner AI Solutions, we don't just build websites — we engineer digital experiences that reflect your brand's unique identity. Whether you want sleek minimalism, bold futuristic energy, or a fully interactive layout, our team brings any vision to life with precision and creativity. Every site we build is optimized from the ground up for SEO, speed, and conversion — ensuring your business stands out online and gets found by the right audience. From custom design elements to strategic automation integrations, we tailor every detail to your goals, giving your business a powerful digital foundation built to grow.</p>
+                        <p>At Canner AI Solutions, we don't just build websites — we engineer digital experiences that reflect your brand's unique identity. Every site we build is optimized from the ground up for SEO, speed, and conversion.</p>
                     </a>
-                    
-                    <!-- SEO: Each service as clickable card with proper structure -->
+
                     <a href="process-optimization" class="service-card" aria-labelledby="service-optimization">
                         <div class="service-icon" aria-hidden="true">⚡</div>
                         <h3 id="service-optimization">Process Optimization</h3>
                         <p>Identify and eliminate inefficiencies in your workflow using advanced AI analysis. We streamline operations to save time and resources while maximizing productivity.</p>
                     </a>
-                    
+
                     <a href="intelligent-automation" class="service-card" aria-labelledby="service-automation">
                         <div class="service-icon" aria-hidden="true">🤖</div>
                         <h3 id="service-automation">Intelligent Automation</h3>
                         <p>Automate repetitive tasks and free your team to focus on high-value work. Our AI-powered automation solutions integrate seamlessly with your existing systems.</p>
                     </a>
-                    
+
                     <a href="roi-enhancement" class="service-card" aria-labelledby="service-roi">
                         <div class="service-icon" aria-hidden="true">📈</div>
                         <h3 id="service-roi">ROI Enhancement</h3>
                         <p>Implement data-driven AI strategies that directly impact your bottom line. We focus on measurable results and continuous improvement to maximize your return on investment.</p>
                     </a>
-                    
+
                     <a href="ai-strategy-consulting" class="service-card" aria-labelledby="service-strategy">
                         <div class="service-icon" aria-hidden="true">🎯</div>
                         <h3 id="service-strategy">AI Strategy Consulting</h3>
                         <p>Develop a comprehensive AI roadmap aligned with your business goals. We provide expert guidance on AI adoption, implementation, and scaling.</p>
                     </a>
-                    
+
                     <a href="business-analysis" class="service-card" aria-labelledby="service-analysis">
                         <div class="service-icon" aria-hidden="true">🔍</div>
                         <h3 id="service-analysis">Business Analysis</h3>
                         <p>Deep-dive analysis of your operations to uncover hidden opportunities. We leverage AI to provide insights that drive strategic decision-making.</p>
                     </a>
-                    
+
                     <a href="custom-ai-solutions" class="service-card" aria-labelledby="service-custom">
                         <div class="service-icon" aria-hidden="true">🛠️</div>
                         <h3 id="service-custom">Custom AI Solutions</h3>
@@ -1275,9 +1215,7 @@
             </div>
         </section>
 
-        <!-- SEO: About section with company information -->
         <section class="about" id="about" aria-labelledby="about-heading">
-            <!-- Large watermark logo in background with clean transparent background -->
             <div class="about-logo-watermark" aria-hidden="true">
                 <img src="logo_transparent.png" alt="">
             </div>
@@ -1285,9 +1223,7 @@
                 <h2 id="about-heading" class="section-title">About Us</h2>
                 <div class="about-content">
                     <p>Canner AI Solutions is a cutting-edge consultancy dedicated to helping businesses harness the transformative power of artificial intelligence. We specialize in identifying inefficiencies, implementing intelligent automation, and developing strategic AI solutions that drive measurable results.</p>
-                    
                     <p>Our approach is hands-on and results-oriented. We don't just provide recommendations—we work alongside you to implement solutions that make a real difference. Whether you're just beginning your AI journey or looking to optimize existing systems, we bring the expertise and innovation to help you succeed.</p>
-                    
                     <aside class="founders">
                         <h3>Founded by Brothers with a Vision</h3>
                         <p>Canner AI Solutions was founded by Maximilian Canner and his Brother Joshua Canner, combining deep technical expertise with a passion for helping businesses thrive. Our mission is simple: leverage AI strategically to help companies work smarter, not harder.</p>
@@ -1296,7 +1232,6 @@
             </div>
         </section>
 
-        <!-- SEO: Contact section with contact information -->
         <section class="contact" id="contact" aria-labelledby="contact-heading">
             <div class="container">
                 <h2 id="contact-heading" class="section-title">Get In Touch</h2>
@@ -1321,9 +1256,7 @@
         </section>
     </main>
 
-    <!-- SEO: Footer with supplementary information -->
     <footer role="contentinfo">
-        <!-- Logo in footer with clean transparent background -->
         <div class="footer-logo">
             <img src="logo_transparent.png" alt="CannerAI Solutions">
         </div>
@@ -1331,194 +1264,122 @@
         <p>AI Consulting | Automation & Strategy</p>
         <nav class="footer-links" aria-label="Footer navigation">
             <a href="#services">Services</a>
+            <a href="ai-avatar-video.html">AI Avatar Video</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </footer>
 
-
     <script>
-        // ===== CUSTOM CURSOR =====
+        // Custom Cursor
         const cursor = document.getElementById('customCursor');
         const cursorDot = document.getElementById('cursorDot');
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-        let dotX = 0, dotY = 0;
+        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, dotX = 0, dotY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
 
         function animateCursor() {
-            // Smooth following effect
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
             dotX += (mouseX - dotX) * 0.15;
             dotY += (mouseY - dotY) * 0.15;
-
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
             cursorDot.style.left = dotX + 'px';
             cursorDot.style.top = dotY + 'px';
-
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
 
-        // Add hover effect to cursor
-        const hoverElements = document.querySelectorAll('a, button, .service-card, .contact-item');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
-            });
+        document.querySelectorAll('a, button, .service-card, .contact-item').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
         });
 
-        // ===== 3D ROTATING LOGO WITH MOUSE TRACKING =====
+        // 3D Logo
         const heroLogo = document.querySelector('.hero-logo img');
         const heroSection = document.querySelector('.hero');
-
         if (heroLogo && heroSection) {
             heroSection.addEventListener('mousemove', (e) => {
                 const rect = heroSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
+                const rotateX = (e.clientY - rect.top - rect.height / 2) / 20;
+                const rotateY = (rect.width / 2 - (e.clientX - rect.left)) / 20;
                 heroLogo.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
             });
-
             heroSection.addEventListener('mouseleave', () => {
                 heroLogo.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
             });
         }
 
-        // ===== SCROLL PROGRESS BAR =====
+        // Scroll progress
         const scrollProgress = document.getElementById('scrollProgress');
-        
         window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            scrollProgress.style.width = scrolled + '%';
+            const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (window.scrollY / h * 100) + '%';
         });
 
-        // ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS =====
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Fade-in observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.15, rootMargin: '0px 0px -100px 0px' });
 
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Apply fade-in to service cards and sections
-        document.querySelectorAll('.service-card, .contact-item, .about-content, .founders').forEach(el => {
+        document.querySelectorAll('.service-card, .contact-item, .about-content, .founders, .fade-in-section').forEach(el => {
             el.classList.add('fade-in-section');
-            fadeInObserver.observe(el);
+            observer.observe(el);
         });
 
-        // ===== INTERACTIVE PARTICLES =====
+        // Particles
         const particlesContainer = document.getElementById('particles');
         const particleArray = [];
-
-        // Create particles with mouse interaction
         for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particlesContainer.appendChild(particle);
-            
-            particleArray.push({
-                element: particle,
-                x: parseFloat(particle.style.left),
-                baseY: Math.random() * 100
-            });
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 10 + 's';
+            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(p);
+            particleArray.push({ element: p, x: parseFloat(p.style.left), baseY: Math.random() * 100 });
         }
 
-        // Make particles react to mouse
         document.addEventListener('mousemove', (e) => {
-            const mouseXPercent = (e.clientX / window.innerWidth) * 100;
-            const mouseYPercent = (e.clientY / window.innerHeight) * 100;
-
+            const mx = (e.clientX / window.innerWidth) * 100;
+            const my = (e.clientY / window.innerHeight) * 100;
             particleArray.forEach(p => {
-                const distX = p.x - mouseXPercent;
-                const distY = p.baseY - mouseYPercent;
-                const distance = Math.sqrt(distX * distX + distY * distY);
-
-                if (distance < 15) {
-                    const angle = Math.atan2(distY, distX);
-                    const force = (15 - distance) / 15;
-                    const moveX = Math.cos(angle) * force * 3;
-                    const moveY = Math.sin(angle) * force * 3;
-                    
-                    p.element.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + force * 0.5})`;
-                    p.element.style.opacity = 0.8 + force * 0.2;
+                const dx = p.x - mx, dy = p.baseY - my;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 15) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (15 - dist) / 15;
+                    p.element.style.transform = `translate(${Math.cos(angle)*force*3}px, ${Math.sin(angle)*force*3}px) scale(${1+force*0.5})`;
                 } else {
-                    p.element.style.transform = 'translate(0, 0) scale(1)';
+                    p.element.style.transform = 'translate(0,0) scale(1)';
                 }
             });
         });
 
-        // ===== SMOOTH SCROLLING =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // ===== RIPPLE EFFECT ON BUTTONS =====
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
+        // Ripple on CTA
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
+                ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px;`;
                 ripple.classList.add('ripple');
-
                 this.appendChild(ripple);
-
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+                setTimeout(() => ripple.remove(), 600);
             });
         });
+    </script>
 
-        console.log('🚀 All interactive features loaded!');
-        console.log('✨ Custom cursor active');
-        console.log('🎮 3D logo tracking enabled');
-        console.log('📊 Scroll progress tracking');
-        console.log('🎬 Scroll animations ready');
-        console.log('⚡ Interactive particles active');
-    </script></script>
-
-    <!-- SEO: Third-party chatbot loaded asynchronously with defer -->
     <script async defer type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
     <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmh3k0zzz000ej873h0myu4mq'></zapier-interfaces-chatbot-embed>
 </body>
