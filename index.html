@@ -87,7 +87,6 @@
             100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
         }
 
-        /* ===== HEADER - FIXED MOBILE ===== */
         header {
             background: rgba(10, 10, 10, 0.7) !important;
             backdrop-filter: blur(20px) saturate(180%);
@@ -167,7 +166,6 @@
             white-space: nowrap;
         }
 
-        /* Nav links row */
         .nav-links-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -211,48 +209,45 @@
             width: 100%;
         }
 
-        /* ===== MOBILE HEADER FIX ===== */
+        /* ===== AIP NAV BADGE ===== */
+        .nav-aip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-aip-badge::after {
+            content: 'NEW';
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            background: #00d9ff;
+            color: #0a0a0a;
+            padding: 1px 5px;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 0.6rem 1rem;
                 gap: 0;
             }
-
-            /* Hide contact links on mobile to save space */
-            .header-contact {
-                display: none;
-            }
-
+            .header-contact { display: none; }
             .logo {
                 gap: 0.6rem;
-                margin: 0 auto; /* center logo when contacts hidden */
+                margin: 0 auto;
             }
-
-            .brain-icon {
-                width: 36px;
-                height: 36px;
-            }
-
-            .logo h1 {
-                font-size: 1.1rem;
-            }
-
-            .nav-links-container {
-                padding: 0 1rem 0.5rem 1rem;
-            }
-
+            .brain-icon { width: 36px; height: 36px; }
+            .logo h1 { font-size: 1.1rem; }
+            .nav-links-container { padding: 0 1rem 0.5rem 1rem; }
             .nav-links {
                 gap: 1.2rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
-            .nav-links a {
-                font-size: 0.82rem;
-            }
+            .nav-links a { font-size: 0.82rem; }
         }
 
-        /* Hero Section */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -567,6 +562,107 @@
             .fp-step { min-width: 100%; }
         }
 
+        /* ===== AIP ANNOUNCEMENT BANNER ===== */
+        .aip-banner {
+            padding: 2rem 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aip-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(138, 43, 226, 0.08) 100%);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aip-banner-inner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(0,217,255,0.03), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .aip-banner-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .aip-banner-text { flex: 1; position: relative; z-index: 1; }
+
+        .aip-banner-badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: #00d9ff;
+            color: #0a0a0a;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+
+        .aip-banner-text h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .aip-banner-text p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .aip-banner-cta {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aip-banner-cta:hover {
+            background: rgba(0, 217, 255, 0.15);
+            border-color: #00d9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+        }
+
+        @media (max-width: 700px) {
+            .aip-banner-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+        }
+
         /* Services Section */
         .services {
             padding: 5rem 2rem 6rem;
@@ -665,7 +761,6 @@
         .service-card:hover::before { opacity: 1; }
         .service-card:hover::after { left: 100%; }
 
-        /* ===== NEW PRODUCT CARD - SPECIAL STYLING ===== */
         .service-card.featured-card {
             border: 1px solid rgba(201, 168, 76, 0.35) !important;
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, rgba(0, 217, 255, 0.03) 100%) !important;
@@ -678,8 +773,18 @@
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%) !important;
         }
 
-        .service-card.featured-card .service-icon {
-            color: #c9a84c;
+        .service-card.featured-card .service-icon { color: #c9a84c; }
+
+        /* ===== AIP CARD SPECIAL STYLING ===== */
+        .service-card.aip-card {
+            border: 1px solid rgba(0, 217, 255, 0.35) !important;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.06) 0%, rgba(138, 43, 226, 0.06) 100%) !important;
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.12), inset 0 1px 0 0 rgba(255,255,255,0.08) !important;
+        }
+
+        .service-card.aip-card:hover {
+            border: 1px solid rgba(0, 217, 255, 0.7) !important;
+            box-shadow: 0 25px 60px rgba(0, 217, 255, 0.25), 0 0 40px rgba(138, 43, 226, 0.2) !important;
         }
 
         .new-badge {
@@ -694,6 +799,11 @@
             border-radius: 3px;
             margin-bottom: 14px;
             vertical-align: middle;
+        }
+
+        .new-badge.cyan-badge {
+            background: #00d9ff;
+            color: #0a0a0a;
         }
 
         .service-icon {
@@ -840,7 +950,6 @@
 
         .contact-item a:hover { color: #8a2be2; }
 
-        /* Footer */
         footer {
             background: #000000;
             border-top: 2px solid #00d9ff;
@@ -874,7 +983,6 @@
 
         .footer-links a:hover { color: #8a2be2; }
 
-        /* Mobile hero */
         @media (max-width: 768px) {
             .hero-logo { width: 150px; height: 150px; }
             .hero h2 { font-size: 2.5rem; }
@@ -886,7 +994,6 @@
             .about-logo-watermark { width: 250px; height: 250px; }
         }
 
-        /* Circuit decorations */
         .circuit-decoration {
             position: absolute;
             width: 200px; height: 200px;
@@ -910,7 +1017,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Custom Cursor */
         body { cursor: none !important; }
         * { cursor: none !important; }
 
@@ -943,7 +1049,6 @@
             border-color: #8a2be2;
         }
 
-        /* Scroll progress */
         .scroll-progress {
             position: fixed;
             top: 0; left: 0;
@@ -956,7 +1061,6 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Scroll animations */
         .fade-in-section {
             opacity: 0;
             transform: translateY(50px);
@@ -968,7 +1072,6 @@
             transform: translateY(0);
         }
 
-        /* Body glow */
         body {
             background: 
                 radial-gradient(ellipse at top, rgba(0, 217, 255, 0.15), transparent),
@@ -993,7 +1096,6 @@
         @keyframes fadeIn { to { opacity: 1; } }
     </style>
 
-    <!-- SEO: Structured Data - Organization Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1035,31 +1137,6 @@
       ]
     }
     </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://canneraisolutions.com/#webpage",
-      "url": "https://canneraisolutions.com/",
-      "name": "AI Automation for Small Business | CannerAI Solutions",
-      "description": "Expert AI automation consulting for SMBs. Transform operations with intelligent automation, process optimization, and custom AI solutions.",
-      "isPartOf": { "@id": "https://canneraisolutions.com/#website" },
-      "datePublished": "2024-01-01T00:00:00+00:00",
-      "dateModified": "2025-05-07T00:00:00+00:00"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://canneraisolutions.com/#website",
-      "url": "https://canneraisolutions.com/",
-      "name": "CannerAI Solutions",
-      "description": "AI Automation & Strategy Consulting for Small to Medium Businesses"
-    }
-    </script>
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -1092,6 +1169,8 @@
                 <li role="none"><a href="#home" role="menuitem">Home</a></li>
                 <li role="none"><a href="#services" role="menuitem">Services</a></li>
                 <li role="none"><a href="ai-avatar-video.html" role="menuitem">AI Avatar Video</a></li>
+                <!-- ===== AIP NAV LINK ===== -->
+                <li role="none"><a href="aip.html" role="menuitem" class="nav-aip-badge">AIP Protocol</a></li>
                 <li role="none"><a href="#about" role="menuitem">About</a></li>
                 <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
@@ -1114,8 +1193,21 @@
             </div>
         </section>
 
+        <!-- ===== AIP ANNOUNCEMENT BANNER ===== -->
+        <section class="aip-banner" aria-label="AIP Protocol announcement">
+            <div class="aip-banner-inner fade-in-section">
+                <div class="aip-banner-icon">🔗</div>
+                <div class="aip-banner-text">
+                    <div class="aip-banner-badge">⚡ Open Source Release</div>
+                    <h3>We just released AIP — the communication standard for the AI agent internet</h3>
+                    <p>AIP is to AI agents what HTTP was to the web. Any agent can talk to any other agent, with cryptographic identity, streaming task updates, and full auditability. Built by Canner AI Solutions. Open source.</p>
+                </div>
+                <a href="aip.html" class="aip-banner-cta">Learn More →</a>
+            </div>
+        </section>
+
         <!-- ===== FEATURED PRODUCT BANNER ===== -->
-        <section class="featured-product" aria-label="Featured product">
+        <section class="featured-product" aria-label="Featured product" style="padding-top:2rem;">
             <div class="featured-product-inner fade-in-section">
                 <div class="fp-content">
                     <div class="fp-badge">⭐ New Product</div>
@@ -1162,12 +1254,20 @@
                 <p class="section-subtitle">Cutting-edge AI solutions tailored to your business needs</p>
                 <div class="services-grid">
 
-                    <!-- NEW: AI Avatar Video card - featured styling -->
+                    <!-- AI Avatar Video -->
                     <a href="ai-avatar-video.html" class="service-card featured-card" aria-labelledby="service-avatar">
                         <div class="new-badge">New</div>
                         <div class="service-icon" aria-hidden="true">🎬</div>
                         <h3 id="service-avatar">AI Avatar Video Production</h3>
                         <p>Professional AI-generated videos of you — your cloned voice, your likeness — produced from a script and delivered as polished full HD files. One setup session, then recurring production on your schedule.</p>
+                    </a>
+
+                    <!-- ===== AIP CARD ===== -->
+                    <a href="aip.html" class="service-card aip-card" aria-labelledby="service-aip">
+                        <div class="new-badge cyan-badge">Open Source</div>
+                        <div class="service-icon" aria-hidden="true">🔗</div>
+                        <h3 id="service-aip">AIP — AI Protocol</h3>
+                        <p>We open-sourced AIP — the communication standard for the AI agent internet. HTTP for AI agents. Any agent talks to any agent, with cryptographic identity, streaming updates, and full auditability.</p>
                     </a>
 
                     <a href="custom-website-design.html" class="service-card" aria-labelledby="service-website">
@@ -1211,6 +1311,7 @@
                         <h3 id="service-custom">Custom AI Solutions</h3>
                         <p>Bespoke AI tools and systems designed specifically for your unique challenges. From concept to deployment, we build solutions that fit your needs perfectly.</p>
                     </a>
+
                 </div>
             </div>
         </section>
@@ -1260,18 +1361,18 @@
         <div class="footer-logo">
             <img src="logo_transparent.png" alt="CannerAI Solutions">
         </div>
-        <p>&copy; 2025 Canner AI Solutions. All rights reserved.</p>
+        <p>&copy; 2026 Canner AI Solutions. All rights reserved.</p>
         <p>AI Consulting | Automation & Strategy</p>
         <nav class="footer-links" aria-label="Footer navigation">
             <a href="#services">Services</a>
             <a href="ai-avatar-video.html">AI Avatar Video</a>
+            <a href="aip.html">AIP Protocol</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </footer>
 
     <script>
-        // Custom Cursor
         const cursor = document.getElementById('customCursor');
         const cursorDot = document.getElementById('cursorDot');
         let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, dotX = 0, dotY = 0;
@@ -1296,7 +1397,6 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
         });
 
-        // 3D Logo
         const heroLogo = document.querySelector('.hero-logo img');
         const heroSection = document.querySelector('.hero');
         if (heroLogo && heroSection) {
@@ -1311,14 +1411,12 @@
             });
         }
 
-        // Scroll progress
         const scrollProgress = document.getElementById('scrollProgress');
         window.addEventListener('scroll', () => {
             const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             scrollProgress.style.width = (window.scrollY / h * 100) + '%';
         });
 
-        // Fade-in observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.15, rootMargin: '0px 0px -100px 0px' });
@@ -1328,7 +1426,6 @@
             observer.observe(el);
         });
 
-        // Particles
         const particlesContainer = document.getElementById('particles');
         const particleArray = [];
         for (let i = 0; i < 50; i++) {
@@ -1357,7 +1454,6 @@
             });
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1366,7 +1462,6 @@
             });
         });
 
-        // Ripple on CTA
         document.querySelectorAll('.cta-button').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 const ripple = document.createElement('span');
